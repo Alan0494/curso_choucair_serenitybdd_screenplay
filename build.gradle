@@ -1,0 +1,44 @@
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    ext.serenityVersion='4.1.3'
+    ext.versionCucumber='7.22.0'
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+
+        }
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:$serenityVersion"
+    }
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-cucumber:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-ensure:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-reports:$serenityVersion"
+    implementation "io.cucumber:datatable:7.22.0"
+    implementation "io.cucumber:cucumber-junit:$versionCucumber"
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
+    implementation 'junit:junit:4.13.2'
+    implementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$serenityVersion"
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+}
+
+test{
+    systemProperties System.getProperties()
+}
