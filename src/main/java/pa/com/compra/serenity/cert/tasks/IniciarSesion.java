@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import pa.com.compra.serenity.cert.userinterfaces.login;
+import pa.com.compra.serenity.cert.userinterfaces.LoginPage;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 
@@ -26,10 +26,10 @@ public class IniciarSesion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
 
-                Enter.theValue(usuario).into(login.CAMPO_USUARIO),
-                WaitUntil.the(login.CAMPO_CONTRASENA, isCurrentlyVisible()).forNoMoreThan(50).seconds(),
-                Enter.theValue(contrasena).into(login.CAMPO_CONTRASENA),
-                Click.on(login.BOTON_INICIO_SESION)
+                Enter.theValue(usuario).into(LoginPage.CAMPO_USUARIO),
+                WaitUntil.the(LoginPage.CAMPO_CONTRASENA, isCurrentlyVisible()).forNoMoreThan(50).seconds(),
+                Enter.theValue(contrasena).into(LoginPage.CAMPO_CONTRASENA),
+                Click.on(LoginPage.BOTON_INICIO_SESION)
 
         );
 

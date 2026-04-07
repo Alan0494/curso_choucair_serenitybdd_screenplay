@@ -10,7 +10,6 @@ public class overproduction {
     public static final Target AddtoCart2 = Target.the("carrito2")
             .locatedBy("//div[@class=\"inventory_item\"][2]//button[1]");
 
-
     public static final Target AddtoCart3 = Target.the("carrito3")
             .locatedBy("//div[@class=\"inventory_item\"][3]//button[1]");
 

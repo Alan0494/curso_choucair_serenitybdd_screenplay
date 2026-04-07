@@ -37,9 +37,7 @@ public class SwagLabStepdefinitions {
     public void iniciaSesionConUsuarioYContrasena(String usuario, String contrasena) {
 
         OnStage.theActorInTheSpotlight().attemptsTo(
-                IniciarSesion.conCredenciales(usuario, contrasena)
-
-        );
+                IniciarSesion.conCredenciales(usuario, contrasena));
 
     }
 
